@@ -1,0 +1,21 @@
+.btn{
+    cursor: pointer;
+}
+
+.btn_demo{
+    background: transparent;
+    font-size: 18px;
+    color: white;
+    padding: 11px 35px;
+    border: 1.5px solid var(--white);
+    border-radius: 30px;
+    transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
+    &:hover{
+        color: var(--red);
+        border: 1.5px solid var(--red);
+    }
+}
+
+.btn_contact{
+    background-color: red;
+}
