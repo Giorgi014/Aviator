@@ -6,8 +6,12 @@
 }
 
 :root{
-    --white: #ffffff;
+    --white: rgb(232,232,232);
     --black: #000000;
     --red: rgb(189,58,50);
+    --darker_red: rgb(131, 41, 37);
     --bg_color: rgb(10,34,51);
+}
+body{
+    background-color: var(--bg_color);
 }

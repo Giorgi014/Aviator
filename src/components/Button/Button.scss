@@ -17,5 +17,15 @@
 }
 
 .btn_contact{
-    background-color: red;
+    padding: 25px 90px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 35px;
+    color: var(--white);
+    background-color: var(--red);
+    transition: background 0.3s ease-in-out;
+    &:hover{
+        background-color: var(--darker_red);
+    }
 }
