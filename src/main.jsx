@@ -6,6 +6,7 @@ import App from "./App.jsx";
 
 const Home = React.lazy(() => import("./components/Main/Home/Home"));
 const AboutUs = React.lazy(() => import("./components/Main/AbouUs/AbouUs.jsx"));
+const Concept = React.lazy(() => import("./components/Main/Concept/Concept.jsx"));
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
           <Suspense fallback={<div>Loading...</div>}>
             <Home />
             <AboutUs />
+            <Concept />
           </Suspense>
         ),
       },
