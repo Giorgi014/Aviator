@@ -7,12 +7,17 @@
 
 :root{
     --white: rgb(232,232,232);
+    --transparent_white: #fff3;
+    --more_transparent_white: #ffffff18;
+    --transparent_blue: #2b313d;
     --black: #000000;
     --red: rgb(189,58,50);
     --transparent_red: rgba(189, 57, 50, 0.44);
     --darker_red: rgb(131, 41, 37);
     --bg_color: rgb(10,34,51);
+    --blue: #092234cc;
 }
 body{
     background-color: var(--bg_color);
+    overflow-x: hidden;
 }

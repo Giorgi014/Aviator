@@ -1,0 +1,80 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.about_container {
+  width: 100vw;
+  position: relative;
+  .radial_cont {
+    @include displayCenter(space-between, center);
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    .second {
+      position: absolute;
+      bottom: -500px;
+      left: 50%;
+    }
+  }
+  .about_aviator_studio {
+    width: 100%;
+    text-align: center;
+    .concept_text {
+      font-size: 41.4px;
+      font-weight: 500;
+      color: var(--red);
+    }
+    .electrifying_text {
+      font-size: 41.4px;
+      font-weight: 500;
+      color: var(--white);
+    }
+    .cart_container {
+      @include displayCenter(space-between, center);
+      width: 90%;
+      max-width: 1080px;
+      margin: 100px auto;
+      .inline_cart_items {
+        @include displayCenter(center, center);
+        flex-direction: column;
+        width: 190px;
+        height: 165px;
+        row-gap: 32px;
+        padding: 1px;
+        .about_cart_icon {
+          width: 85px;
+          height: 85px;
+        }
+        .about_cart_text {
+          font-size: 21.6px;
+          color: var(--white);
+        }
+      }
+    }
+  }
+  .about_aviator {
+    @include displayCenter(center, center);
+    width: 100%;
+    height: 450px;
+    background: linear-gradient(
+      to bottom,
+      transparent 20%,
+      #fff1 20%,
+      #fff1 80%,
+      transparent 80%
+    );
+    margin-bottom: 150px;
+    .phones {
+      width: 523.67px;
+      height: 369.53px;
+    }
+    .about_aviator_information {
+      width: 400px;
+      font-size: 21.6px;
+      color: var(--white);
+    }
+  }
+}

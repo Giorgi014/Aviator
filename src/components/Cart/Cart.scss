@@ -1,0 +1,20 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.cart {
+  border: 1px solid var(--transparent_white);
+  border-radius: 15px;
+  background: linear-gradient(
+    160deg,
+    var(--more_transparent_white),
+    var(--transparent_blue)
+  );
+}
+
+.about {
+    padding: 50px 40px;
+    width: max-content;
+}
