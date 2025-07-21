@@ -1,0 +1,60 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.why_us_container {
+  width: 100%;
+  text-align: center;
+  padding: 200px 0px 140px 0px;
+  position: relative;
+  overflow: hidden;
+  .why_us_head {
+    font-size: 37.8px;
+    color: var(--red);
+  }
+  .why_us_text {
+    font-size: 37.8px;
+    color: var(--white);
+  }
+  .why_us_carts {
+    @include displayCenter(space-between, center);
+    margin: 100px auto 200px auto;
+    width: 90%;
+    max-width: 952px;
+    .choose_cart {
+      width: 135.6px;
+      height: 102.4px;
+      font-size: 21.6px;
+      color: var(--white);
+      text-align: center;
+    }
+  }
+  .contact_us_container {
+    @include displayCenter(center, center);
+    width: 100%;
+    .contact_us {
+      width: 655.2px;
+      .contact_text {
+        margin: 0 40px 72px 0px;
+        font-size: 36px;
+        text-align: center;
+        color: var(--white);
+      }
+      .contact_info_text {
+        font-size: 18px;
+        text-align: center;
+        color: var(--white);
+        margin-bottom: 60px;
+      }
+    }
+  }
+  .radial_cont {
+    @include displayCenter(space-between, center);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 27%;
+  }
+}

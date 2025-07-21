@@ -7,15 +7,16 @@
 .about_container {
   width: 100vw;
   position: relative;
+  padding: 200px 0px;
   .radial_cont {
     @include displayCenter(space-between, center);
     z-index: -1;
     width: 100%;
     position: absolute;
-    top: 10%;
+    top: 20%;
     .second {
       position: absolute;
-      bottom: -500px;
+      bottom: -550px;
       left: 50%;
     }
   }
@@ -66,7 +67,7 @@
       #fff1 80%,
       transparent 80%
     );
-    margin-bottom: 150px;
+    // margin-bottom: 150px;
     .phones {
       width: 523.67px;
       height: 369.53px;

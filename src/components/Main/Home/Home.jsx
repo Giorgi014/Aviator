@@ -1,10 +1,19 @@
-import { Button } from "../../Button/Button";
-import { Plane } from "../../Route/Route";
+import { useEffect } from "react";
+import { Button, Plane } from "../../Route/Route";
 import "./Home.scss";
 
 const Home = () => {
+  useEffect(() => {
+    if (window.location.hash === '#home') {
+      const element = document.getElementById("home")
+
+      if (element) {
+        element.scrollIntoView({behavior: "smooth"})
+      }
+    }
+  },[])
   return (
-      <article className="home_container">
+      <article className="home_container" id="home">
         <section className="aviato_studio_info">
           <h1 className="aviator_studio_head">Aviator Studio –</h1>
           <p className="aviator_studio_game">

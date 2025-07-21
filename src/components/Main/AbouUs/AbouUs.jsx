@@ -1,9 +1,18 @@
+import { useEffect } from "react";
 import { Arrow, Cart, Dollar, Phones, Radial, Rocket } from "../../Route/Route";
 import "./AboutUs.scss";
 
 const AbouUs = () => {
+  useEffect(() => {
+    if (window.location.hash === '#about_us') {
+      const element = document.getElementById('about_us');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
   return (
-    <article className="about_container">
+    <article className="about_container" id="about_us">
       <section className="about_aviator_studio">
         <p className="concept_text">The concept</p>
         <p className="electrifying_text">is simple but electrifying:</p>

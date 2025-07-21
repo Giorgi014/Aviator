@@ -1,9 +1,18 @@
+import { useEffect } from "react";
 import { Planeimg } from "../../Route/Route";
 import "./Concept.scss"
 
 const Concept = () => {
+  useEffect(() => {
+    if (window.location.hash === "#concept") {
+      const element = document.getElementById("concept");
+
+      element.scrollIntoView({behavior: "smooth"})
+    }
+  },[])
+
   return (
-    <article className="concept_container">
+    <article className="concept_container" id="concept">
       <section className="concept_aviator">
         <p className="aviator_official">The Official</p>
         <p className="aviator_game">Aviator Game</p>

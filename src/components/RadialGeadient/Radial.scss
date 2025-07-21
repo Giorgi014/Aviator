@@ -2,6 +2,8 @@
   width: 0px;
   height: 0px;
   border-radius: 50%;
-  box-shadow: 0px 0px 600px 250px var(--transparent_red);
-  filter: drop-shadow(0 0 200px var(--transparent_red));
+  box-shadow: 0px 0px 800px 300px var(--transparent_red),
+  0px 0px 800px 150px var(--blue),
+  0px 0px 800px 250px var(--blue);
+  filter: drop-shadow(0 0 400px var(--transparent_red));
 }

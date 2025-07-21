@@ -24,7 +24,6 @@ header {
     ul {
       @include displayCenter(space-between, center);
       list-style: none;
-      color: var(--white);
       width: 100%;
       max-width: 450px;
       margin: 0px 20px;
@@ -32,8 +31,12 @@ header {
         font-size: 18px;
         cursor: pointer;
         transition: color 0.3s ease-in-out;
-        &:hover {
-          color: var(--red);
+        a{
+          color: var(--white);
+          text-decoration: none;
+          &:hover {
+            color: var(--red);
+          }
         }
       }
     }
