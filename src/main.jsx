@@ -8,6 +8,7 @@ const Home = React.lazy(() => import("./components/Main/Home/Home"));
 const AboutUs = React.lazy(() => import("./components/Main/AbouUs/AbouUs.jsx"));
 const Concept = React.lazy(() => import("./components/Main/Concept/Concept.jsx"));
 const WhyUs = React.lazy(() => import("./components/Main/WhyUs/WhyUs.jsx"));
+const FAQ = React.lazy(() => import("./components/Main/FAQ/Faq.jsx"));
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
             <AboutUs />
             <Concept />
             <WhyUs />
+            <FAQ />
           </Suspense>
         ),
       },

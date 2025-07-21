@@ -31,6 +31,13 @@ const header = () => {
       whyUsSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const scrollFaq = () => {
+    const faqSection = document.getElementById("faq");
+
+    if (faqSection) {
+      faqSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header>
@@ -49,7 +56,7 @@ const header = () => {
           <li onClick={scrollWhyUs}>
             <Link to="/#why_us">Why Us?</Link>
           </li>
-          <li>
+          <li onClick={scrollFaq}>
             <Link to="/#faq">FAQ</Link>
           </li>
         </ul>
