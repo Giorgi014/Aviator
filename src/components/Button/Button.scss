@@ -17,8 +17,8 @@
 }
 
 .btn_contact{
-    padding: 25px 90px;
-    font-size: 18px;
+    padding: clamp(12px, 3vw, 25px) clamp(36px, 8vw, 90px);
+    font-size: clamp(14px, 2vw, 18px);
     font-weight: bold;
     border: none;
     border-radius: 35px;
@@ -33,6 +33,10 @@
 @media screen and (max-width: 850px) {
     .btn_demo{
         padding: 6px 24px;
+        font-size: 14px;
+    }
+    .btn_contact{
+        padding: 12px 36px;
         font-size: 14px;
     }
 }

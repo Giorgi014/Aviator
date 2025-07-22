@@ -5,8 +5,8 @@
 }
 
 .home_container{
-    @include displayCenter(space-between, center);
-    width: 100%;
+    @include displayCenter(space-between, flex-start);
+    width: 90%;
     max-width: 1080px;
     margin: 0 auto;
     padding: 200px 0px;
@@ -15,28 +15,56 @@
         padding: 20px;
         .aviator_studio_head{
             color: var(--red);
-            font-size: 60px;
+            font-size: clamp(40px, 4vw, 60px);
             font-weight: 500;
         }
         .aviator_studio_game{
             color: var(--white);
-            font-size: 60px;
+            font-size: clamp(40px, 4vw, 60px);
             font-weight: 500;
         }
         .aviator_studio{
             margin: 70px 40px 50px 0px;
             color: var(--white);
-            font-size: 18px;
+            font-size: clamp(16px, 2vw, 18px);
             font-weight: 400;
         }
     }
     .aviator_studio_icon{
-        @include displayCenter(flex-end, flex-start);
-        width: 50%;
-        height: 515px;
+        margin: 20px 0px;
+        width: 45%;
         .airplane{
             width: 100%;
             max-width: 444px;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .home_container{
+        padding: 200px 0px 50px 0px;
+        .aviato_studio_info{
+            @include displayCenter(flex-start, center);
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            .aviator_studio_head{
+                width: 100%;
+                max-width: 350px;
+                font-size: 33.6px;
+            }
+            .aviator_studio_game{
+                width: 100%;
+                max-width: 350px;
+                font-size: 33.6px;
+            }
+            .aviator_studio{
+                margin: 70px auto 50px auto;
+                font-size: 14px;
+            }
+        }
+        .aviator_studio_icon{
+            display: none;
         }
     }
 }
