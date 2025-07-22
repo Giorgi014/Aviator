@@ -28,3 +28,14 @@
   padding: 74px 144px;
   width: max-content;
 }
+
+@media screen and (max-width: 950px){
+  .about {
+    padding: 36px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .about {
+    padding: 24px;
+  }
+}
