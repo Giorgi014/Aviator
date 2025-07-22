@@ -4,40 +4,59 @@
   align-items: $align;
 }
 
-.concept_container{
-    @include displayCenter(center, flex-start);
-    gap: 150px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 200px 50px;
-    background-color: white;
-    .concept_aviator{
-        width: 320px;
-        .aviator_official{
-            font-size: 37.8px;
-            color: var(--red);
-            font-weight: 500;
-        }
-        .aviator_game{
-            font-size: 37.8px;
-            color: var(--light_black);
-            font-weight: 500;
-            margin-bottom: 24px;
-        }
-        .concept_upper_text{
-            font-size: 18px;
-            margin: 24px 0px;
-        }
-        .concept_down_text{
-            font-size: 18px;
-        }
+.concept_container {
+  @include displayCenter(center, flex-start);
+  gap: 150px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 200px 50px;
+  background-color: white;
+  .concept_aviator {
+    width: 320px;
+    .aviator_official {
+      font-size: clamp(25.2px, 3vw, 37.8px);
+      color: var(--red);
+      font-weight: 500;
     }
-    .concept_icon{
-        width: 480.49px;
-        height: 434.98px;
-        .aviator_stidio_image{
-            width: 100%;
-            height: 100%;
-        }
+    .aviator_game {
+      font-size: clamp(25.2px, 3vw, 37.8px);
+      color: var(--light_black);
+      font-weight: 500;
+      margin-bottom: 24px;
     }
+    .concept_upper_text {
+      font-size: clamp(16px, 2vw, 18px);
+      margin: 24px 0px;
+    }
+    .concept_down_text {
+      font-size: clamp(16px, 2vw, 18px);
+    }
+  }
+  .concept_icon {
+    width: clamp(380.49px, 50vw, 480.49px);
+    height: clamp(278.98px, 40vw, 434.98px);
+    .aviator_stidio_image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .concept_container {
+    text-align: center;
+    padding: 50px 50px;
+    .concept_aviator {
+      width: 100%;
+      .concept_upper_text {
+        font-size: 16px;
+      }
+      .concept_down_text {
+        font-size: 16px;
+      }
+    }
+    .concept_icon {
+      display: none;
+    }
+  }
 }
