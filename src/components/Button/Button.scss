@@ -29,3 +29,10 @@
         background-color: var(--darker_red);
     }
 }
+
+@media screen and (max-width: 850px) {
+    .btn_demo{
+        padding: 6px 24px;
+        font-size: 14px;
+    }
+}

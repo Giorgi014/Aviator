@@ -30,12 +30,38 @@ header {
       li {
         font-size: 18px;
         cursor: pointer;
-        transition: color 0.3s ease-in-out;
-        a{
+        a {
           color: var(--white);
           text-decoration: none;
+          transition: color 0.3s ease-in-out;
           &:hover {
             color: var(--red);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+
+@media screen and (max-width: 850px) {
+  header {
+    .header_container {
+      ul {
+        @include displayCenter(space-evenly, center);
+        gap: 5px;
+        position: absolute;
+        left: 0px;
+        bottom: -55px;
+        width: 100%;
+        max-width: none;
+        background-color: var(--header_bg);
+        margin: 0px;
+        padding: 18px 36px;
+        li{
+          a{
+            font-size: clamp(14px, 2vw, 16px);
           }
         }
       }
