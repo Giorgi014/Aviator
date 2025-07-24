@@ -39,6 +39,10 @@ const header = () => {
     }
   };
 
+  const openAviatorDemmo = () => {
+    window.open("/Aviator")
+  }
+
   return (
     <header>
       <section className="header_container">
@@ -60,7 +64,7 @@ const header = () => {
             <Link to="/#faq">FAQ</Link>
           </li>
         </ul>
-        <Button variant="demo">Demo</Button>
+        <Button variant="demo" onClick={openAviatorDemmo}>Demo</Button>
       </section>
     </header>
   );

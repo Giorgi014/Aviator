@@ -1,42 +1,92 @@
-.btn{
-    cursor: pointer;
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
 }
 
-.btn_demo{
-    background: transparent;
-    font-size: 18px;
-    color: white;
-    padding: 11px 35px;
-    border: 1.5px solid var(--white);
-    border-radius: 30px;
-    transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
-    &:hover{
-        color: var(--red);
-        border: 1.5px solid var(--red);
-    }
+.btn {
+  cursor: pointer;
 }
 
-.btn_contact{
-    padding: clamp(12px, 3vw, 25px) clamp(36px, 8vw, 90px);
-    font-size: clamp(14px, 2vw, 18px);
-    font-weight: bold;
-    border: none;
-    border-radius: 35px;
-    color: var(--white);
-    background-color: var(--red);
-    transition: background 0.3s ease-in-out;
-    &:hover{
-        background-color: var(--darker_red);
-    }
+.btn_demo {
+  background: transparent;
+  font-size: 18px;
+  color: white;
+  padding: 11px 35px;
+  border: 1.5px solid var(--white);
+  border-radius: 30px;
+  transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
+  &:hover {
+    color: var(--red);
+    border: 1.5px solid var(--red);
+  }
 }
+
+.btn_contact {
+  padding: clamp(12px, 3vw, 25px) clamp(36px, 8vw, 90px);
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: bold;
+  border: none;
+  border-radius: 35px;
+  color: var(--white);
+  background-color: var(--red);
+  transition: background 0.3s ease-in-out;
+  &:hover {
+    background-color: var(--darker_red);
+  }
+}
+
+.btn_menu {
+  @include displayCenter(center, center);
+  width: 31.6px;
+  height: 31.6px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--dark_grey);
+  font-size: 16px;
+  color: var(--white);
+  &:hover {
+    border: 1px solid var(--more_transparent_white);
+  }
+}
+
+.btn_history {
+  padding: 7.5px;
+  font-family: "Inter", sans-serif;
+  font-size: 11.5px;
+  font-weight: bold;
+  color: var(--white);
+  background: transparent;
+  border: none;
+  border-radius: 30px;
+  &:hover {
+    background-color: var(--black);
+  }
+}
+
+.btn_show_history {
+  @include displayCenter(center, center);
+  width: 28.26px;
+  height: 28.6px;
+  font-size: 13.5px;
+  color: var(--white);
+  border-radius: 50%;
+  border: none;
+  background-color: var(--dark_grey);
+  &:hover {
+    border: 1px solid var(--more_transparent_white);
+  }
+}
+
+// Responsive
 
 @media screen and (max-width: 850px) {
-    .btn_demo{
-        padding: 6px 24px;
-        font-size: 14px;
-    }
-    .btn_contact{
-        padding: 12px 36px;
-        font-size: 14px;
-    }
+  .btn_demo {
+    padding: 6px 24px;
+    font-size: 14px;
+  }
+  .btn_contact {
+    padding: 12px 36px;
+    font-size: 14px;
+  }
 }

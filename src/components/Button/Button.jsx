@@ -10,6 +10,9 @@ export const Button = ({ variant = "default", children, ...props }) => {
         {
           "btn_demo": variant === "demo",
           "btn_contact": variant === "contact_us",
+          "btn_menu": variant === "menu",
+          "btn_history": variant === "round_history",
+          "btn_show_history": variant === "show_round_history",
         },
         props.className
       )}

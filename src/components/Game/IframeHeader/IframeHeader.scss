@@ -1,0 +1,47 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.iframe_header_container {
+  @include displayCenter(space-between, center);
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+  width: 100%;
+  color: var(--white);
+  & * {
+    font-family: "Inter", sans-serif;
+  }
+  .iframe_main_header {
+    @include displayCenter(space-between, center);
+    width: 33.5%;
+    padding: 11.25px 15px;
+    .logo {
+      cursor: pointer;
+    }
+    .balance_and_menu {
+      @include displayCenter(center, center);
+      .current_balance_cont {
+        @include displayCenter(center, center);
+        gap: 5px;
+        padding: 0px 11.25px;
+        .current_balance {
+          font-size: 14px;
+          font-weight: 500;
+          color: var(--green);
+        }
+        .current_balance_currency {
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .round_hitory_container {
+    @include displayCenter(space-between, center);
+    width: 66.5%;
+    padding: 11.25px 15px;
+  }
+}

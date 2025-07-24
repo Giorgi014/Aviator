@@ -1,25 +1,28 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-:root{
-    --white: rgb(232,232,232);
-    --transparent_white: #fff3;
-    --more_transparent_white: #ffffff18;
-    --transparent_blue: #2b313d;
-    --header_bg: #23303ecc;
-    --black: #000000;
-    --light_black: rgb(36,36,36);
-    --red: rgb(189,58,50);
-    --transparent_red: rgba(189, 57, 50, 0.44);
-    --darker_red: rgb(131, 41, 37);
-    --bg_color: rgb(10,34,51);
-    --blue: #092234cc;
+:root {
+  --white: rgb(232, 232, 232);
+  --transparent_white: #fff3;
+  --more_transparent_white: #ffffff18;
+  --transparent_blue: #2b313d;
+  --header_bg: #23303ecc;
+  --black: #000000;
+  --light_black: rgb(36, 36, 36);
+  --more_dark_grey: #1a1a1a;
+  --dark_grey: #262626;
+  --red: rgb(189, 58, 50);
+  --transparent_red: rgba(189, 57, 50, 0.44);
+  --darker_red: rgb(131, 41, 37);
+  --bg_color: rgb(10, 34, 51);
+  --blue: #092234cc;
+  --green: #49D204;
 }
-body{
-    background-color: var(--bg_color);
-    overflow-x: hidden;
+body {
+  background-color: var(--bg_color);
+  overflow-x: hidden;
 }
