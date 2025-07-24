@@ -22,7 +22,7 @@ const AviatorBrand = () => {
         )}
       </div>
       <div className="faq_text">
-        <p className="aviator_brand_text head_text">
+        <p className="aviator_brand_text">
           When did the first use of Aviator brand in gambling take place?
         </p>
         {showAviatorBrand && (

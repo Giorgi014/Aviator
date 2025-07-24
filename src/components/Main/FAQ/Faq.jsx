@@ -22,12 +22,14 @@ const Faq = () => {
     <article className="faq_contaoner" id="faq">
       <p className="question_text">Any Questions?</p>
       <p className="help_text">We Can Help You</p>
-      <HowCreated />
-      <AviatorBrand />
-      <Owner />
-      <AviatorStudio />
-      <CrashGame />
-      <Copyright />
+      <section className="faq_components">
+        <HowCreated />
+        <AviatorBrand />
+        <Owner />
+        <AviatorStudio />
+        <CrashGame />
+        <Copyright />
+      </section>
     </article>
   );
 };

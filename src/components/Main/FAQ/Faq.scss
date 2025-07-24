@@ -8,15 +8,20 @@
   width: 100%;
   background-color: white;
   text-align: center;
-  padding: 144px 288px;
+  padding: 144px 0px;
   .question_text {
-    font-size: 37.8px;
+    font-size: clamp(25.2px, 5vw, 37.8px);
     color: var(--red);
     font-weight: 500;
   }
   .help_text {
-    font-size: 37.8px;
+    font-size: clamp(25.2px, 5vw, 37.8px);
     font-weight: 500;
     margin-bottom: 70px;
+  }
+  .faq_components {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1080px;
   }
 }

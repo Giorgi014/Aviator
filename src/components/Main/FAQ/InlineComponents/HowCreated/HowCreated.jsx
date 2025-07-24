@@ -26,10 +26,12 @@ const HowCreated = () => {
         <p className="how_created">How was the brand Aviator created?</p>
         {showHowCreated && (
           <>
-            <p className="hidden_text">
+            <p className="hidden_text upper_text">
               First use of Aviator as a brand in gambling industry took place in
               2015 when City Loft LLC established a company which ran one of the
               most popular online gambling platforms in Georgia, adjarabet.com.
+            </p>
+            <p  className="hidden_text down_text">
               In 2016-2017 under the instructions of City Loft LLC, various
               designers worked on the design and logo of Casino Aviator, a land
               casino which operated in 2018-2019.
