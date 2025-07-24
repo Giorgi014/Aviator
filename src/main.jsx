@@ -20,9 +20,9 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<div>Loading...</div>}>
             <Home />
-            <AboutUs />
+            {/* <AboutUs />
             <Concept />
-            <WhyUs />
+            <WhyUs /> */}
             <FAQ />
           </Suspense>
         ),

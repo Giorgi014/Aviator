@@ -19,34 +19,4 @@
     font-weight: 500;
     margin-bottom: 70px;
   }
-  .info_cont {
-    @include displayCenter(flex-start, center);
-    text-align: start;
-    gap: 20px;
-    padding: 9px 0px;
-    width: 100%;
-    border-bottom: 1px solid var(--red);
-    .plus_minus_cont {
-        width: 20px;
-      .plus {
-        font-size: 18px;
-        font-weight: bold;
-        color: var(--red);
-        cursor: pointer;
-      }
-      .minus {
-        font-size: 18px;
-        font-weight: bold;
-        color: var(--red);
-        cursor: pointer;
-      }
-    }
-    img {
-      width: 80px;
-      height: 72.59px;
-    }
-    .head_text {
-      font-size: 25.2px;
-    }
-  }
 }
