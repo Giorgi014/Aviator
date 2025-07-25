@@ -2,14 +2,31 @@ import { Button, IframeLogo } from "../../Route/Route";
 import { IoIosMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { FaAngleDown } from "react-icons/fa6";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./IframeHeader.scss";
 
 const IframeHeader = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [showHistory, setShowHistory] = useState(false);
 
   const toggleMenu = (setter, currentValue) => {
     setter(!currentValue);
+  };
+
+  useEffect(() => {
+    const historyElement = document.querySelector(".full_round_history");
+    if (historyElement) {
+      if (showHistory) {
+        historyElement.classList.add("active");
+      } else {
+        historyElement.classList.remove("active");
+      }
+    }
+  }, [showHistory]);
+
+  const toggleHistory = () => {
+    const history = !showHistory;
+    setShowHistory(history);
   };
 
   return (
@@ -29,13 +46,16 @@ const IframeHeader = () => {
           </Button>
         </div>
       </section>
-      <section className="round_hitory_container">
+      <section className={showHistory ? "active" : "round_hitory_container"}>
         <div className="full_round_history">
+          <p className="round_history_text">Round History</p>
           <Button variant="round_history">1.00</Button>
         </div>
-        <Button variant="show_round_history">
-          <FaAngleDown />
-        </Button>
+        <div className="show_history_cont">
+          <Button variant="show_round_history" onClick={toggleHistory}>
+            {showHistory ? <IoClose /> : <FaAngleDown />}
+          </Button>
+        </div>
       </section>
     </header>
   );

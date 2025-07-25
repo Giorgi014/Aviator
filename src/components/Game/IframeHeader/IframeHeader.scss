@@ -43,5 +43,40 @@
     @include displayCenter(space-between, center);
     width: 66.5%;
     padding: 11.25px 15px;
+    position: relative;
+    .full_round_history {
+      width: max-content;
+      height: 24px;
+      overflow: hidden;
+      .round_history_text{
+        display: none;
+      }
+    }
+  }
+  .active {
+    position: relative;
+    width: 66.5%;
+    padding: 11.25px 15px;
+    .full_round_history {
+      position: absolute;
+      width: 97.5%;
+      top: -10px;
+      height: 120px;
+      overflow: auto;
+      background-color: var(--more_dark_grey);
+      border: 1px solid var(--more_transparent_white);
+      border-radius: 15px;
+      .round_history_text{
+        display: block;
+        margin: 10px 0px;
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+    .show_history_cont{
+      position: absolute;
+      top: 0;
+      right: 1.3%;
+    }
   }
 }

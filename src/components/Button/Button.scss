@@ -73,6 +73,7 @@
   border-radius: 50%;
   border: none;
   background-color: var(--dark_grey);
+  z-index: 2;
   &:hover {
     border: 1px solid var(--more_transparent_white);
   }
