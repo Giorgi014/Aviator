@@ -1,6 +1,19 @@
-.aviator_demo_container{
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.aviator_demo_container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--more_dark_grey);
+  .aviator_game_container {
+    @include displayCenter(space-between, flex-start);
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background-color: var(--more_dark_grey);
+    .game_info_container {
+      width: 33.5%;
+    }
+  }
 }

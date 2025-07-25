@@ -1,0 +1,54 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.about_bet_container {
+  @include displayCenter(center, center);
+  flex-direction: column;
+  width: 100%;
+  .head_buttons {
+    @include displayCenter(space-between, center);
+    gap: 5px;
+    width: 95%;
+    margin-top: 80px;
+    background-color: var(--dark_grey);
+    padding: 7.25px;
+    border-radius: 33px;
+    button {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      color: var(--white);
+      transition: color 0.3s ease;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        background-color: var(--light_grey);
+        z-index: -1;
+        transition: width 0.2s ease;
+        border-radius: 33px;
+      }
+
+      &.selected::before {
+        width: 100%;
+      }
+    }
+  }
+  .bets_and_history {
+    @include displayCenter(space-between, center);
+    width: 95%;
+    margin: 10px 0px;
+    .total_bet_con{
+        @include displayCenter(center, center);
+    }
+    .previus_cont{
+        @include displayCenter(center, center);
+    }
+  }
+}

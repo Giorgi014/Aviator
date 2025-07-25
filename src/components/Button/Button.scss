@@ -79,6 +79,20 @@
   }
 }
 
+.btn_bets{
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 33px;
+  padding: 4.25px 11.25px;
+  font-size: 11.75px;
+  color: var(--light_grey);
+  &:hover{
+    color: var(--more_light_grey);
+  }
+}
+
+
 // Responsive
 
 @media screen and (max-width: 850px) {

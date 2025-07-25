@@ -13,6 +13,8 @@ export const Button = ({ variant = "default", children, ...props }) => {
           "btn_menu": variant === "menu",
           "btn_history": variant === "round_history",
           "btn_show_history": variant === "show_round_history",
+          "btn_bets": variant === "bets",
+          "btn_previus": variant === "previus",
         },
         props.className
       )}
