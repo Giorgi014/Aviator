@@ -104,6 +104,23 @@
   }
 }
 
+.btn_weekly{
+  @include displayCenter(center, center);
+  width: 100%;
+  padding: 5.62px 7.5px;
+  font-size: 11.25px;
+  font-weight: bold;
+  color: var(--white);
+}
+.btn_monthly{
+  @include displayCenter(center, center);
+  width: 100%;
+  padding: 5.62px 7.5px;
+  font-size: 11.25px;
+  font-weight: bold;
+  color: var(--white);
+}
+
 // Responsive
 
 @media screen and (max-width: 850px) {

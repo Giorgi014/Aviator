@@ -1,7 +1,44 @@
-.top_wins_container{
-    width: 100%;
-    margin-top: 10px;
-    .top_wins_header{
-        width: 100%;
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.top_wins_container {
+  width: 100%;
+  .weekly_and_monthly {
+    @include displayCenter(space-between, center);
+    width: 95%;
+    gap: 7px;
+    margin: 10px auto;
+    .weekly {
+      width: 100%;
+      background-color: var(--dark_grey);
+      border: 1px solid var(--light_grey);
+      border-radius: 30px;
+      transition: background 0.3s ease-in-out;
+        &:hover{
+            background-color: var(--light_grey);
+        }
     }
+    .monthly {
+      width: 100%;
+      background-color: var(--dark_grey);
+      border: 1px solid var(--light_grey);
+      border-radius: 30px;
+      transition: background 0.3s ease-in-out;
+        &:hover{
+            background-color: var(--light_grey);
+        }
+    }
+    .selected_option{
+        width: 100%;
+        background-color: var(--light_grey);
+        border: 1px solid var(--light_grey);
+        border-radius: 30px;
+    }
+  }
+  .top_wins_header {
+    width: 100%;
+  }
 }

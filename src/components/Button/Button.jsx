@@ -15,6 +15,8 @@ export const Button = ({ variant = "default", children, ...props }) => {
           "btn_show_history": variant === "show_round_history",
           "btn_bets": variant === "bets",
           "btn_previus": variant === "previus",
+          "btn_weekly": variant === "weekly",
+          "btn_monthly": variant === "monthly",
         },
         props.className
       )}

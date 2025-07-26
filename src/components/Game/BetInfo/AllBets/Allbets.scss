@@ -8,8 +8,8 @@
   width: 100%;
   .bets_and_history {
     @include displayCenter(space-between, center);
-    width: 100%;
-    margin: 10px 0px;
+    width: 95%;
+    margin: 10px auto;
     .total_bet_con {
       @include displayCenter(center, center);
       gap: 3px;

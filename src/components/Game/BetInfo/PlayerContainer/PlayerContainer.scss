@@ -1,0 +1,41 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.player_container {
+  @include displayCenter(space-between, center);
+  width: 100%;
+  border-bottom: 1px solid var(--more_transparent_white);
+  .player_name {
+    @include displayCenter(flex-start, center);
+    width: 100%;
+    padding: 11.25px 11.25px;
+    p {
+      font-size: 15px;
+      font-weight: bold;
+      color: var(--more_light_grey);
+    }
+  }
+  .player_bet {
+    @include displayCenter(center, center);
+    width: 100%;
+    padding: 4.75px 11.25px;
+    p {
+      font-size: 15px;
+      font-weight: bold;
+      color: var(--more_light_grey);
+    }
+  }
+  .player_win {
+    @include displayCenter(flex-end, center);
+    width: 100%;
+    padding: 4.75px 11.25px;
+    p {
+      font-size: 15px;
+      font-weight: bold;
+      color: var(--more_light_grey);
+    }
+  }
+}

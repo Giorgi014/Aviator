@@ -41,12 +41,15 @@
     }
   }
   .about_bet_info {
-    width: 95%;
+    width: 100%;
     .visible{
       display: block;
     }
     .hidden{
       display: none;
     }
+  }
+  .players_container{
+    width: 100%;
   }
 }
