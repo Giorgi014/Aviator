@@ -1,0 +1,14 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.default_head {
+  @include displayCenter(space-between, center);
+  width: 100%;
+  background-color: var(--lighter_black);
+  color: var(--more_light_grey);
+  font-size: 11.25px;
+  padding: 3.75px 7.5px;
+}

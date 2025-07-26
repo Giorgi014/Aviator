@@ -40,15 +40,13 @@
       }
     }
   }
-  .bets_and_history {
-    @include displayCenter(space-between, center);
+  .about_bet_info {
     width: 95%;
-    margin: 10px 0px;
-    .total_bet_con{
-        @include displayCenter(center, center);
+    .visible{
+      display: block;
     }
-    .previus_cont{
-        @include displayCenter(center, center);
+    .hidden{
+      display: none;
     }
   }
 }

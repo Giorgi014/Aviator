@@ -79,7 +79,7 @@
   }
 }
 
-.btn_bets{
+.btn_bets {
   width: 100%;
   background: transparent;
   border: none;
@@ -87,11 +87,22 @@
   padding: 4.25px 11.25px;
   font-size: 11.75px;
   color: var(--light_grey);
-  &:hover{
+  &:hover {
     color: var(--more_light_grey);
   }
 }
 
+.btn_previus {
+  background-color: var(--dark_grey);
+  border: none;
+  border-radius: 30px;
+  color: var(--white);
+  padding: 5px 7.5px;
+  font-size: 12px;
+  &:hover{
+    background-color: var(--light_grey);
+  }
+}
 
 // Responsive
 

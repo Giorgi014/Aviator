@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Button } from "../../Route/Route";
-import { MdOutlineHistory } from "react-icons/md";
+import { Allbets, MyBets, TopWins } from "../BetInfo/Route";
 import "./AboutBet.scss";
 
 const AboutBet = () => {
   const [selected, setSelected] = useState("all");
 
   return (
-    <div className="about_bet_container">
-      <div className="head_buttons">
+    <article className="about_bet_container">
+      <section className="head_buttons">
         <Button
           variant="bets"
           className={selected === "all" ? "selected" : ""}
@@ -30,20 +30,19 @@ const AboutBet = () => {
         >
           Top Wins
         </Button>
-      </div>
-      <div className="bets_and_history">
-        <div className="total_bet_con">
-          <p className="total_bets">Total Bets</p>
-          <p className="total_bets_number">100</p>
+      </section>
+      <section className="about_bet_info">
+        <div className={selected === "all" ? "visible" : "hidden"}>
+          <Allbets />
         </div>
-        <Button variant="previus" className="previus_cont">
-          <div className="history_icon">
-            <MdOutlineHistory />
-          </div>
-          <p className="previus_round">Previus Round</p>
-        </Button>
-      </div>
-    </div>
+        <div className={selected === "my" ? "visible" : "hidden"}>
+          <MyBets />
+        </div>
+        <div className={selected === "top" ? "visible" : "hidden"}>
+          <TopWins />
+        </div>
+      </section>
+    </article>
   );
 };
 
