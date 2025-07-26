@@ -40,7 +40,7 @@ const header = () => {
   };
 
   const openAviatorDemmo = () => {
-    window.open("/Aviator")
+    window.open("/Aviator", "_blank")
   }
 
   return (
