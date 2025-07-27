@@ -1,0 +1,32 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.copyright_main_container {
+  @include displayCenter(space-between, center);
+  padding: 7.5px 15px;
+  background-color: var(--more_dark_grey);
+  border-top: 1px solid var(--light_grey);
+  .copyright {
+    @include displayCenter(center, center);
+    gap: 7px;
+    p {
+      font-size: 12.25px;
+      color: var(--white);
+    }
+    .security_icon {
+      font-size: 23px;
+      color: var(--green);
+    }
+    .provably {
+      border-bottom: 1px solid var(--white);
+      cursor: pointer;
+    }
+  }
+  .copyright_logo {
+    width: 75px;
+    height: 30px;
+  }
+}

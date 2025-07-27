@@ -5,9 +5,11 @@
 }
 
 .about_bet_container {
-  @include displayCenter(center, center);
+  @include displayCenter(flex-start, center);
   flex-direction: column;
+  position: relative;
   width: 100%;
+  height: 100vh;
   .head_buttons {
     @include displayCenter(space-between, center);
     gap: 5px;
@@ -42,14 +44,28 @@
   }
   .about_bet_info {
     width: 100%;
-    .visible{
+    .visible {
       display: block;
     }
-    .hidden{
+    .hidden {
       display: none;
     }
   }
-  .players_container{
+  .players_container {
     width: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .hidden_players_container{
+    display: none;
+  }
+  .copyright_container{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
   }
 }

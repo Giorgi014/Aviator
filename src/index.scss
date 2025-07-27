@@ -24,6 +24,7 @@
   --bg_color: rgb(10, 34, 51);
   --blue: #092234cc;
   --green: #49D204;
+  --color_bg: linear-gradient(to bottom, #082338 0%, #000000 60%);
 }
 body {
   background-color: var(--bg_color);

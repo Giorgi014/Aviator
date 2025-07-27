@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Button } from "../../Route/Route";
-import { Allbets, MyBets, PlayerContainer, TopWins } from "../BetInfo/Route";
+import {
+  Allbets,
+  Copyright,
+  MyBets,
+  PlayerContainer,
+  TopWins,
+} from "../BetInfo/Route";
 import "./AboutBet.scss";
 
 const AboutBet = () => {
@@ -42,8 +48,11 @@ const AboutBet = () => {
           <TopWins />
         </div>
       </section>
-      <section className="players_container">
-        <PlayerContainer name="Ajika" bet="10.00" win="0.00"></PlayerContainer>
+      <section className={selected === "all" ? "players_container" : "hidden_players_container"}>
+        <PlayerContainer name="Ajika" bet="10.00" win="0.00" />
+      </section>
+      <section className="copyright_container">
+        <Copyright />
       </section>
     </article>
   );
