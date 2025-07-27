@@ -1,5 +1,6 @@
 import IframeHeader from "./IframeHeader/IframeHeader";
 import AboutBet from "./AboutBet/AboutBet";
+import GameAviator from "./GameAviator/GameAviator";
 import "./Aviator.scss";
 
 const Aviator = () => {
@@ -10,7 +11,9 @@ const Aviator = () => {
         <div className="game_info_container">
           <AboutBet />
         </div>
-        <div className="game_container"></div>
+        <div className="game_container">
+          <GameAviator />
+        </div>
       </div>
     </div>
   );
