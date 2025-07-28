@@ -1,0 +1,65 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.bet_container {
+  width: 100%;
+  background-color: var(--more_dark_grey);
+  border-radius: 10px;
+  padding: 11.25px;
+  .value_continer {
+    @include displayCenter(space-between, flex-start);
+    width: 100%;
+    gap: 10px;
+    .bet_value {
+      width: 100%;
+      .input_cont {
+        @include displayCenter(space-between, center);
+        width: 100%;
+        background-color: var(--lighter_black);
+        padding: 7.25px;
+        border-radius: 33px;
+        border: 1px solid var(--light_grey);
+        .amount {
+          width: 100%;
+          background: transparent;
+          color: var(--white);
+          text-align: center;
+          font-size: 18px;
+          border: none;
+          outline: none;
+        }
+      }
+      .choose_mount_cont{
+        @include displayCenter(space-between, center);
+        gap: 5px;
+        width: 100%;
+        margin-top: 17px;
+      }
+    }
+    .bet_mount_btn {
+      width: 100%;
+      .bet{
+        @include displayCenter(center, center);
+        width: 100%;
+        font-size: 15px;
+        margin-top: 5px;
+      }
+      .mount_cont{
+        @include displayCenter(center, center);
+        gap: 5px;
+        font-size: 22.5px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .autobet_autochashout_container{
+    @include displayCenter(space-between, center);
+    gap: 10px;
+    width: 100%;
+    margin-top: 15px;
+  }
+}
