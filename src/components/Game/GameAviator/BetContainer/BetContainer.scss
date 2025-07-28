@@ -7,7 +7,7 @@
 .bet_container {
   width: 100%;
   background-color: var(--more_dark_grey);
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 11.25px;
   .value_continer {
     @include displayCenter(space-between, flex-start);

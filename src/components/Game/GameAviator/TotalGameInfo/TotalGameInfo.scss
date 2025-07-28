@@ -1,1 +1,40 @@
-// clear
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+.total_game_info {
+  @include displayCenter(space-between, center);
+  width: 100%;
+  padding: 9.35px 11.25px;
+  margin-top: 15px;
+  border-radius: 10px;
+  background-color: var(--more_dark_grey);
+  .bets_container {
+    .bets_text {
+      font-size: 9.35px;
+      font-weight: bold;
+      color: var(--lighter_grey);
+    }
+    .total_bets_cont {
+      @include displayCenter(center, center);
+      gap: 1px;
+      font-size: 12.18px;
+      font-weight: bold;
+      color: var(--white);
+    }
+  }
+  .total_win_gel {
+    text-align: end;
+    .total_win_text {
+      font-size: 9.35px;
+      font-weight: bold;
+      color: var(--lighter_grey);
+    }
+    .total_gel {
+      font-size: 12.18px;
+      font-weight: bold;
+      color: var(--white);
+    }
+  }
+}
