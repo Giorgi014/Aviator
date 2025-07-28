@@ -27,6 +27,7 @@ const IndexNumber = () => {
     }, intervalTime);
 
     const randomStopTime = Math.floor(Math.random() * 3000) + 0;
+
     timeout.current = setTimeout(() => {
       clearInterval(interval.current);
       setIsRunning(false);
@@ -36,10 +37,11 @@ const IndexNumber = () => {
       clearInterval(interval.current);
       clearTimeout(timeout.current);
     };
-  }, [!isRunning]);
+  }, [isRunning]);
 
   useEffect(() => {
     if (!isRunning) {
+        localStorage.setItem("stoppedIndex", index.toFixed(2));
       const restartDelay = 5000;
       const restartTimeout = setTimeout(() => {
         setIndex(1);
@@ -48,7 +50,10 @@ const IndexNumber = () => {
 
       return () => clearTimeout(restartTimeout);
     }
-  }, [!isRunning]);
+  }, [isRunning, index]);
+
+  //   localStorage.setItem("stoppedIndex", index.toFixed(2));
+
   return <div>{index.toFixed(2)}x</div>;
 };
 
