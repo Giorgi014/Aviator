@@ -1,12 +1,15 @@
 import { BetContainer } from "./BetContainer/BetContainer";
 import TotalGameInfo from "./TotalGameInfo/TotalGameInfo";
+import IndexNumber from "./IndexNumber/IndexNumber";
 import "./GameAviator.scss";
 
 const GameAviator = () => {
   return (
     <div className="game_aviator_container">
       <section className="plane"></section>
-      <section className="number_index">1.00x</section>
+      <section className="number_index">
+        <IndexNumber />
+      </section>
       <section className="bet">
         <BetContainer />
         <BetContainer />
