@@ -3,7 +3,8 @@ import { IoIosMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { FaAngleDown } from "react-icons/fa6";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import { CurrentBalance } from "./CurrentBalance";
 import "./IframeHeader.scss";
 
 const IframeHeader = () => {
@@ -34,15 +35,22 @@ const IframeHeader = () => {
 
   const returnHome = () => {
     navigate("/");
-  }
+  };
 
   return (
     <header className="iframe_header_container">
       <section className="iframe_main_header">
-        <img src={IframeLogo} alt="aviator studio logo" className="logo" onClick={returnHome}/>
+        <img
+          src={IframeLogo}
+          alt="aviator studio logo"
+          className="logo"
+          onClick={returnHome}
+        />
         <div className="balance_and_menu">
           <div className="current_balance_cont">
-            <p className="current_balance">1,000.00</p>
+            <p className="current_balance">
+              <CurrentBalance />
+            </p>
             <p className="current_balance_currency">GEL</p>
           </div>
           <Button
