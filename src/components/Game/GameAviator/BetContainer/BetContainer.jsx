@@ -2,12 +2,14 @@ import { FaPlus, FaMinus } from "react-icons/fa6";
 import { MdOutlineHistory } from "react-icons/md";
 import { Button } from "../../../Route/Route";
 import { useState } from "react";
+import { useBalance } from "../../IframeHeader/CurrentBalance";
 import "./BetContainer.scss";
 
 export const BetContainer = () => {
   const [betAmount, setBetAmount] = useState(1);
+  const { balance, subtractFromBalance } = useBalance();
 
-  const handleChangeAmount = () => {
+  const handleChangeAmount = (value) => {
     setBetAmount(parseFloat(value) || 0);
   };
 
@@ -23,7 +25,20 @@ export const BetContainer = () => {
   };
 
   const handleAmount = (value) => {
-    setBetAmount(value);
+    setBetAmount((current) => {
+      const newAmount = current + value;
+      return newAmount <= 500 ? newAmount : current;
+    });
+  };
+
+  const handleBet = () => {
+    if (betAmount <= balance && betAmount > 0) {
+      subtractFromBalance(betAmount);
+      
+      console.log(`Bet placed: ${betAmount} GEL`);
+    } else {
+      console.log("Insufficient balance or invalid bet amount");
+    }
   };
 
   return (
@@ -60,10 +75,10 @@ export const BetContainer = () => {
           </div>
         </div>
         <div className="bet_mount_btn">
-          <Button variant="bet_btn">
+          <Button variant="bet_btn" onClick={handleBet}>
             <p className="bet">Bet</p>
             <div className="mount_cont">
-              <p className="bet_mount">1.00</p>
+              <p className="bet_mount">{betAmount.toFixed(2)}</p>
               <p className="mount_valute">GEL</p>
             </div>
           </Button>
