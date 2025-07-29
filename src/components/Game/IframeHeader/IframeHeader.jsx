@@ -5,6 +5,7 @@ import { FaAngleDown } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CurrentBalance } from "./CurrentBalance";
+import { RoundHistory } from "./RoundHistory";
 import "./IframeHeader.scss";
 
 const IframeHeader = () => {
@@ -64,7 +65,9 @@ const IframeHeader = () => {
       <section className={showHistory ? "active" : "round_hitory_container"}>
         <div className="full_round_history">
           <p className="round_history_text">Round History</p>
-          <Button variant="round_history">1.00</Button>
+          <Button variant="round_history">
+            <RoundHistory />
+          </Button>
         </div>
         <div className="show_history_cont">
           <Button variant="show_round_history" onClick={toggleHistory}>

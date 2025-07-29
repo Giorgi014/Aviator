@@ -4,6 +4,7 @@ import "./IndexNumber.scss";
 const IndexNumber = () => {
   const [index, setIndex] = useState(1);
   const [isRunning, setIsRunning] = useState(true);
+  // const [savedIndex, setSavedIndex] = useState([]);
   const interval = useRef(null);
   const timeout = useRef(null);
 
@@ -52,7 +53,7 @@ const IndexNumber = () => {
     }
   }, [isRunning, index]);
 
-  //   localStorage.setItem("stoppedIndex", index.toFixed(2));
+    localStorage.setItem("stoppedIndex", index.toFixed(2));
 
   return <div>{index.toFixed(2)}x</div>;
 };
