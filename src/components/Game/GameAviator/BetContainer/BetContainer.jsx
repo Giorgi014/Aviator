@@ -8,6 +8,7 @@ import "./BetContainer.scss";
 export const BetContainer = () => {
   const [betAmount, setBetAmount] = useState(1);
   const { balance, subtractFromBalance } = useBalance();
+  const [cancel, setCancel] = useState(false);
 
   const handleChangeAmount = (value) => {
     setBetAmount(parseFloat(value) || 0);
@@ -34,11 +35,17 @@ export const BetContainer = () => {
   const handleBet = () => {
     if (betAmount <= balance && betAmount > 0) {
       subtractFromBalance(betAmount);
-      
+      setCancel(true);
       console.log(`Bet placed: ${betAmount} GEL`);
     } else {
       console.log("Insufficient balance or invalid bet amount");
     }
+  };
+
+  const handleCancel = () => {
+    subtractFromBalance(-betAmount);
+    setCancel(false);
+    console.log("Bet cancelled");
   };
 
   return (
@@ -75,11 +82,11 @@ export const BetContainer = () => {
           </div>
         </div>
         <div className="bet_mount_btn">
-          <Button variant="bet_btn" onClick={handleBet}>
-            <p className="bet">Bet</p>
+          <Button variant={cancel ? "cancel_btn" : "bet_btn"} onClick={cancel ? handleCancel : handleBet}>
+            <p className="bet">{cancel ? "Cancel" : "Bet"}</p>
             <div className="mount_cont">
-              <p className="bet_mount">{betAmount.toFixed(2)}</p>
-              <p className="mount_valute">GEL</p>
+              <p className="bet_mount">{cancel ? "" : betAmount.toFixed(2)}</p>
+              <p className="mount_valute">{cancel ? "" : "GEL"}</p>
             </div>
           </Button>
         </div>

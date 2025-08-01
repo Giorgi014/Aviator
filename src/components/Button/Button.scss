@@ -155,6 +155,7 @@
   @include displayCenter(center, center);
   flex-direction: column;
   width: 100%;
+  height: 78.6px;
   padding: 11.5px;
   color: var(--white);
   background-color: var(--darker_green);
@@ -164,6 +165,25 @@
   box-shadow: 0px 0px 0px 1.5px var(--green);
   &:hover {
     background-color: var(--green);
+  }
+}
+
+.btn_cancel {
+  @include displayCenter(center, center);
+  flex-direction: column;
+  width: 100%;
+  height: 78.6px;
+  padding: 11.5px;
+  font-size: 18.75px;
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--red_btn);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: 0px 0px 0px 1.5px var(--red_btn);
+  &:hover {
+    background-color: var(--light_red_btn);
   }
 }
 
