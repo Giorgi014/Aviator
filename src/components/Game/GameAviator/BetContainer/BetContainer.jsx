@@ -49,7 +49,7 @@ export const BetContainer = () => {
   };
 
   return (
-    <article className="bet_container">
+    <article className={cancel ? "cancel_bet_container" : "bet_container"}>
       <section className="value_continer">
         <div className="bet_value">
           <div className="input_cont">
