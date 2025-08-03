@@ -7,7 +7,7 @@ import "./BetContainer.scss";
 
 export const BetContainer = () => {
   const [betAmount, setBetAmount] = useState(1);
-  const { balance, subtractFromBalance } = useBalance();
+  const { balance, subtractFromBalance, addToBalance } = useBalance();
   const [cancel, setCancel] = useState(false);
 
   const handleChangeAmount = (value) => {
@@ -47,6 +47,12 @@ export const BetContainer = () => {
     setCancel(false);
     console.log("Bet cancelled");
   };
+
+  // const handleAddToBalance = () => {
+  //   addToBalance(betAmount);
+  //   // setCancel(false);
+  //   console.log("Bet added back to balance");
+  // };
 
   return (
     <article className={cancel ? "cancel_bet_container" : "bet_container"}>

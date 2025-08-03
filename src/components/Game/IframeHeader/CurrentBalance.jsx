@@ -9,8 +9,12 @@ export const BalanceProvider = ({ children }) => {
     setBalance(prev => prev - amount);
   };
 
+  const addToBalance = (amount) => {
+    setBalance(prev => prev + amount);
+  };
+
   return (
-    <BalanceContext.Provider value={{ balance, setBalance, subtractFromBalance }}>
+    <BalanceContext.Provider value={{ balance, setBalance, subtractFromBalance, addToBalance }}>
       {children}
     </BalanceContext.Provider>
   );
