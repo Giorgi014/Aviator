@@ -18,6 +18,7 @@ export const Button = ({ variant = "default", children, ...props }) => {
           "btn_weekly": variant === "weekly",
           "btn_monthly": variant === "monthly",
           "btn_bet": variant === "bet_btn",
+          "btn_waiting": variant === "waiting_btn",
           "btn_cancel": variant === "cancel_btn",
           "btn_mount": variant === "btn_mount",
           "btn_plus": variant === "btn_plus",

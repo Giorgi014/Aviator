@@ -3,12 +3,15 @@ import { MdOutlineHistory } from "react-icons/md";
 import { Button } from "../../../Route/Route";
 import { useState } from "react";
 import { useBalance } from "../../IframeHeader/CurrentBalance";
+import { useIndex } from "../Context/IndexContext";
 import "./BetContainer.scss";
 
 export const BetContainer = () => {
   const [betAmount, setBetAmount] = useState(1);
   const { balance, subtractFromBalance, addToBalance } = useBalance();
   const [cancel, setCancel] = useState(false);
+  const [waiting, setWaiting] = useState(false);
+  const { index, isRunning } = useIndex();
 
   const handleChangeAmount = (value) => {
     setBetAmount(parseFloat(value) || 0);
@@ -33,6 +36,11 @@ export const BetContainer = () => {
   };
 
   const handleBet = () => {
+    if (isRunning) {
+      setWaiting(true);
+      return;
+    }
+
     if (betAmount <= balance && betAmount > 0) {
       subtractFromBalance(betAmount);
       setCancel(true);
@@ -45,17 +53,20 @@ export const BetContainer = () => {
   const handleCancel = () => {
     subtractFromBalance(-betAmount);
     setCancel(false);
+    setWaiting(false);
     console.log("Bet cancelled");
   };
 
-  // const handleAddToBalance = () => {
-  //   addToBalance(betAmount);
-  //   // setCancel(false);
-  //   console.log("Bet added back to balance");
-  // };
+  const handleWaiting = () => {
+    subtractFromBalance(-betAmount);
+    setWaiting(true);
+    setCancel(false);
+    console.log("Bet waiting");
+  };
+  
 
   return (
-    <article className={cancel ? "cancel_bet_container" : "bet_container"}>
+    <article className={waiting ? "waiting_bet_container" : cancel ? "cancel_bet_container" : "bet_container"}>
       <section className="value_continer">
         <div className="bet_value">
           <div className="input_cont">
@@ -88,11 +99,14 @@ export const BetContainer = () => {
           </div>
         </div>
         <div className="bet_mount_btn">
-          <Button variant={cancel ? "cancel_btn" : "bet_btn"} onClick={cancel ? handleCancel : handleBet}>
-            <p className="bet">{cancel ? "Cancel" : "Bet"}</p>
+          <Button
+            variant={waiting ? "waiting_btn" : cancel ? "cancel_btn" : "bet_btn"}
+            onClick={waiting === handleWaiting || cancel ? handleCancel : handleBet}
+          >
+            <p className="bet">{waiting ? "Waiting" : cancel ? "Cancel" : "Bet"}</p>
             <div className="mount_cont">
-              <p className="bet_mount">{cancel ? "" : betAmount.toFixed(2)}</p>
-              <p className="mount_valute">{cancel ? "" : "GEL"}</p>
+              <p className="bet_mount">{waiting ? betAmount.toFixed(2) : cancel ? "" : betAmount.toFixed(2)}</p>
+              <p className="mount_valute">{waiting ? "GEL" : cancel ? "" : "GEL"}</p>
             </div>
           </Button>
         </div>
