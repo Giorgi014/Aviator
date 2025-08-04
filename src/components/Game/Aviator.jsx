@@ -3,10 +3,12 @@ import AboutBet from "./AboutBet/AboutBet";
 import GameAviator from "./GameAviator/GameAviator";
 import { BalanceProvider } from "./IframeHeader/CurrentBalance";
 import "./Aviator.scss";
+import { IndexContextProvider } from "./GameAviator/Context/IndexContext";
 
 const Aviator = () => {
   return (
     <BalanceProvider>
+      <IndexContextProvider>
       <div className="aviator_demo_container">
         <IframeHeader />
         <div className="aviator_game_container">
@@ -18,6 +20,7 @@ const Aviator = () => {
           </div>
         </div>
       </div>
+      </IndexContextProvider>
     </BalanceProvider>
   );
 };

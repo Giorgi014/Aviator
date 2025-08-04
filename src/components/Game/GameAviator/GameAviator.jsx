@@ -1,6 +1,6 @@
 import { BetContainer } from "./BetContainer/BetContainer";
 import TotalGameInfo from "./TotalGameInfo/TotalGameInfo";
-import IndexNumber from "./IndexNumber/IndexNumber";
+import  IndexNumber  from "./IndexNumber/IndexNumber";
 import "./GameAviator.scss";
 
 const GameAviator = () => {
