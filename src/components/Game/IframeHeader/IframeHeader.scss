@@ -23,6 +23,7 @@
     }
     .balance_and_menu {
       @include displayCenter(center, center);
+      position: relative;
       .current_balance_cont {
         @include displayCenter(center, center);
         gap: 5px;
@@ -37,6 +38,20 @@
           font-weight: 500;
         }
       }
+      .disable_menu {
+        display: none;
+      }
+      .enable_menu {
+        @include displayCenter(center, center);
+        flex-direction: column;
+        padding: 15px 9.37px;
+        position: absolute;
+        top: 115%;
+        right: 0;
+        background-color: var(--more_dark_grey);
+        border: 2px solid var(--dark_grey);
+        border-radius: 30px;
+      }
     }
   }
   .round_hitory_container {
@@ -48,7 +63,7 @@
       width: max-content;
       height: 30px;
       overflow: hidden;
-      .round_history_text{
+      .round_history_text {
         display: none;
       }
     }
@@ -66,14 +81,14 @@
       background-color: var(--more_dark_grey);
       border: 1px solid var(--more_transparent_white);
       border-radius: 15px;
-      .round_history_text{
+      .round_history_text {
         display: block;
         margin: 10px 0px;
         font-size: 15px;
         font-weight: bold;
       }
     }
-    .show_history_cont{
+    .show_history_cont {
       position: absolute;
       top: 0;
       right: 1.3%;

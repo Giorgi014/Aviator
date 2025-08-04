@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CurrentBalance } from "./CurrentBalance";
 import { RoundHistory } from "./RoundHistory";
+import { MenuItem } from "./MenuItem/MenuItem";
 import "./IframeHeader.scss";
 
 const IframeHeader = () => {
@@ -59,6 +60,9 @@ const IframeHeader = () => {
             onClick={() => toggleMenu(setOpenMenu, openMenu)}
           >
             {openMenu ? <IoClose /> : <IoIosMenu />}
+            <div className={openMenu ? "enable_menu" : "disable_menu"}>
+              <MenuItem />
+            </div>
           </Button>
         </div>
       </section>
