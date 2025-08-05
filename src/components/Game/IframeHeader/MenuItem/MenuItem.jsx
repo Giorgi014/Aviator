@@ -10,6 +10,27 @@ const items = [
     mode: <ModeButton />,
     className: "menu_item",
   },
+  {
+    id: 2,
+    icon: <PiMusicNoteSimple />,
+    label: "Sound",
+    mode: <ModeButton />,
+    className: "menu_item",
+  },
+  {
+    id: 3,
+    icon: <PiMusicNoteSimple />,
+    label: "Sound",
+    mode: <ModeButton />,
+    className: "menu_item",
+  },
+  {
+    id: 4,
+    icon: <PiMusicNoteSimple />,
+    label: "Sound",
+    mode: <ModeButton />,
+    className: "menu_item",
+  },
 ];
 
 export const MenuItem = () => {
@@ -27,4 +48,3 @@ export const MenuItem = () => {
     </>
   );
 };
-
