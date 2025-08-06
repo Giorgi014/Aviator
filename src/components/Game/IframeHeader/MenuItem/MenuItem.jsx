@@ -1,5 +1,7 @@
 import ModeButton from "../ModeButton/ModeButton";
-import { PiMusicNoteSimple } from "react-icons/pi";
+import { PiMusicNoteSimple, PiAirplaneTiltLight  } from "react-icons/pi";
+import { AiOutlineSound } from "react-icons/ai";
+import { BsMoon } from "react-icons/bs";
 import "./MenuItem.scss";
 
 const items = [
@@ -12,22 +14,22 @@ const items = [
   },
   {
     id: 2,
-    icon: <PiMusicNoteSimple />,
-    label: "Sound",
+    icon: <AiOutlineSound />,
+    label: "Music",
     mode: <ModeButton />,
     className: "menu_item",
   },
   {
     id: 3,
-    icon: <PiMusicNoteSimple />,
-    label: "Sound",
+    icon: <PiAirplaneTiltLight />,
+    label: "Animation",
     mode: <ModeButton />,
     className: "menu_item",
   },
   {
     id: 4,
-    icon: <PiMusicNoteSimple />,
-    label: "Sound",
+    icon: <BsMoon />,
+    label: "Dark Mode",
     mode: <ModeButton />,
     className: "menu_item",
   },
