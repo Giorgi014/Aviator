@@ -1,5 +1,5 @@
 import ModeButton from "../ModeButton/ModeButton";
-import { PiMusicNoteSimple, PiAirplaneTiltLight  } from "react-icons/pi";
+import { PiMusicNoteSimple, PiAirplaneTiltLight } from "react-icons/pi";
 import { AiOutlineSound } from "react-icons/ai";
 import { BsMoon } from "react-icons/bs";
 import "./MenuItem.scss";
@@ -41,8 +41,10 @@ export const MenuItem = () => {
       {items.map(({ id, icon, label, mode, className }) => {
         return (
           <div key={id} className={className}>
-            <div className="item_icon">{icon}</div>
-            <p className="item_text">{label}</p>
+            <div className="item_content">
+              <div className="item_icon">{icon}</div>
+              <p className="item_text">{label}</p>
+            </div>
             <div className="item_mode">{mode}</div>
           </div>
         );
