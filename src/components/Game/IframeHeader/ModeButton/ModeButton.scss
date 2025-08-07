@@ -3,7 +3,8 @@
   justify-content: $justify;
   align-items: $align;
 }
-.button_cont {
+.button_cont,
+.active_mode {
   @include displayCenter(flex-start, center);
   position: relative;
   width: 30px;
@@ -12,30 +13,23 @@
   border: none;
   border-radius: 30px;
   cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  .left_side,
   .right_side {
     position: absolute;
     width: 15px;
     height: 15px;
     background-color: var(--white);
     border-radius: 50%;
-    left: 2px;
+    transition: transform 0.3s ease-in-out;
   }
   .left_side {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background-color: var(--white);
-    border-radius: 50%;
-    right: 2px;
+    transform: translateX(2px);
+  }
+  .right_side {
+    transform: translateX(13px);
   }
 }
 .active_mode {
-  @include displayCenter(flex-start, center);
-  position: relative;
-  width: 30px;
-  height: 18.75px;
   background-color: var(--green);
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
 }

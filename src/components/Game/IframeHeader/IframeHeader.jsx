@@ -60,7 +60,7 @@ const IframeHeader = () => {
             onClick={() => toggleMenu(setOpenMenu, openMenu)}
           >
             {openMenu ? <IoClose /> : <IoIosMenu />}
-            <div className={openMenu ? "enable_menu" : "disable_menu"}>
+            <div className={openMenu ? "enable_menu" : "disable_menu"} onClick={(e) => e.stopPropagation()}>
               <MenuItem />
             </div>
           </Button>

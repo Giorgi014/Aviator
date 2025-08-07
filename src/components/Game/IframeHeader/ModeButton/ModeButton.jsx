@@ -10,7 +10,7 @@ const ModeButton = () => {
 
   return (
     <button className={`button_cont ${isActive ? "" : "active_mode"}`} onClick={handleModeChange}>
-      <div className={isActive ? "right_side" : "left_side"}></div>
+      <div className={isActive ? "left_side" : "right_side"}></div>
     </button>
   )
 }
