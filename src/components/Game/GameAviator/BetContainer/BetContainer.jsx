@@ -38,12 +38,14 @@ export const BetContainer = () => {
   const handleBet = () => {
     if (isRunning) {
       setWaiting(true);
+      setCancel(false);
       return;
     }
 
     if (betAmount <= balance && betAmount > 0) {
       subtractFromBalance(betAmount);
       setCancel(true);
+      setWaiting(false);
       console.log(`Bet placed: ${betAmount} GEL`);
     } else {
       console.log("Insufficient balance or invalid bet amount");
@@ -58,15 +60,21 @@ export const BetContainer = () => {
   };
 
   const handleWaiting = () => {
-    subtractFromBalance(-betAmount);
-    setWaiting(true);
-    setCancel(false);
+    setWaiting(false);
+    // setCancel(true);
     console.log("Bet waiting");
   };
-  
 
   return (
-    <article className={waiting ? "waiting_bet_container" : cancel ? "cancel_bet_container" : "bet_container"}>
+    <article
+      className={
+        waiting
+          ? "waiting_bet_container"
+          : cancel
+          ? "cancel_bet_container"
+          : "bet_container"
+      }
+    >
       <section className="value_continer">
         <div className="bet_value">
           <div className="input_cont">
@@ -100,13 +108,33 @@ export const BetContainer = () => {
         </div>
         <div className="bet_mount_btn">
           <Button
-            variant={waiting ? "waiting_btn" : cancel ? "cancel_btn" : "bet_btn"}
-            onClick={waiting === handleWaiting || cancel ? handleCancel : handleBet}
+            variant={
+              waiting ? "waiting_btn" : cancel ? "cancel_btn" : "bet_btn"
+            }
+            onClick={() => {
+              if (waiting) {
+                handleWaiting();
+              } else if (cancel) {
+                handleCancel();
+              } else {
+                handleBet();
+              }
+            }}
           >
-            <p className="bet">{waiting ? "Waiting" : cancel ? "Cancel" : "Bet"}</p>
+            <p className="bet">
+              {waiting ? "Waiting" : cancel ? "Cancel" : "Bet"}
+            </p>
             <div className="mount_cont">
-              <p className="bet_mount">{waiting ? betAmount.toFixed(2) : cancel ? "" : betAmount.toFixed(2)}</p>
-              <p className="mount_valute">{waiting ? "GEL" : cancel ? "" : "GEL"}</p>
+              <p className="bet_mount">
+                {waiting
+                  ? betAmount.toFixed(2)
+                  : cancel
+                  ? ""
+                  : betAmount.toFixed(2)}
+              </p>
+              <p className="mount_valute">
+                {waiting ? "GEL" : cancel ? "" : "GEL"}
+              </p>
             </div>
           </Button>
         </div>
