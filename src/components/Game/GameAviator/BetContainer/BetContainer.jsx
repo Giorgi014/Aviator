@@ -36,11 +36,11 @@ export const BetContainer = () => {
   };
 
   const handleBet = () => {
-    if (isRunning) {
-      setWaiting(true);
-      setCancel(false);
-      return;
-    }
+    // if (isRunning) {
+    //   setWaiting(true);
+    //   setCancel(false);
+    //   return;
+    // }
 
     if (betAmount <= balance && betAmount > 0) {
       subtractFromBalance(betAmount);
@@ -60,9 +60,24 @@ export const BetContainer = () => {
   };
 
   const handleWaiting = () => {
-    setWaiting(false);
-    // setCancel(true);
-    console.log("Bet waiting");
+    setWaiting((prev) => {
+      const next = !prev;
+      if (next) setCancel(false);
+      console.log(next ? "Bet waiting" : "Waiting cancelled");
+      return next;
+    });
+  };
+
+  const handleBetButton = () => {
+    if (isRunning) {
+      handleWaiting();
+      return;
+    }
+    if (cancel) {
+      handleCancel();
+    } else {
+      handleBet();
+    }
   };
 
   return (
@@ -111,15 +126,7 @@ export const BetContainer = () => {
             variant={
               waiting ? "waiting_btn" : cancel ? "cancel_btn" : "bet_btn"
             }
-            onClick={() => {
-              if (waiting) {
-                handleWaiting();
-              } else if (cancel) {
-                handleCancel();
-              } else {
-                handleBet();
-              }
-            }}
+            onClick={handleBetButton}
           >
             <p className="bet">
               {waiting ? "Waiting" : cancel ? "Cancel" : "Bet"}

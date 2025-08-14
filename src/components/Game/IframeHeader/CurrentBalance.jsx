@@ -32,6 +32,6 @@ export const CurrentBalance = () => {
   const { balance } = useBalance();
   
   return (
-    <div className='player_balance'>{balance.toFixed(2)}</div>
+    <span className='player_balance'>{balance.toFixed(2)}</span>
   )
 }
