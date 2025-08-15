@@ -15,6 +15,7 @@
   background: var(--color_bg);
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
+  transition: background 0.2s ease-in-out;
   .number_index {
     position: absolute;
     top: 40%;
@@ -31,5 +32,8 @@
   }
   .bets_and_wins{
     width: 100%;
+  }
+  &.dark {
+    background: var(--light_bg_color);
   }
 }
