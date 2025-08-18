@@ -12,6 +12,8 @@ export const BetContainer = () => {
   const [cancel, setCancel] = useState(false);
   const [waiting, setWaiting] = useState(false);
   const { index, isRunning } = useIndex();
+  const [btnState, setBtnState] = useState("inactive", "active", "waiting");
+  const [gameStatus, setGameStatus] = useState("playing", "restarting");
 
   const handleChangeAmount = (value) => {
     setBetAmount(parseFloat(value) || 0);
@@ -36,12 +38,6 @@ export const BetContainer = () => {
   };
 
   const handleBet = () => {
-    // if (isRunning) {
-    //   setWaiting(true);
-    //   setCancel(false);
-    //   return;
-    // }
-
     if (betAmount <= balance && betAmount > 0) {
       subtractFromBalance(betAmount);
       setCancel(true);
@@ -156,4 +152,3 @@ export const BetContainer = () => {
     </article>
   );
 };
-

@@ -41,7 +41,7 @@ export const IndexContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (!isRunning) {
-      localStorage.setItem("stoppedIndex", index.toFixed(2));
+      // localStorage.setItem("stoppedIndex", index.toFixed(2));
       const restartDelay = 5000;
       const restartTimeout = setTimeout(() => {
         setIndex(1);
@@ -52,7 +52,7 @@ export const IndexContextProvider = ({ children }) => {
     }
   }, [isRunning, index]);
 
-  localStorage.setItem("stoppedIndex", index.toFixed(2));
+  // localStorage.setItem("stoppedIndex", index.toFixed(2));
 
   // return <div>{index.toFixed(2)}x</div>;
   return (
