@@ -1,7 +1,7 @@
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { MdOutlineHistory } from "react-icons/md";
 import { Button } from "../../../Route/Route";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useBalance } from "../../IframeHeader/CurrentBalance";
 import { useIndex } from "../Context/IndexContext";
 import "./BetContainer.scss";
@@ -12,8 +12,30 @@ export const BetContainer = () => {
   const [cancel, setCancel] = useState(false);
   const [waiting, setWaiting] = useState(false);
   const { index, isRunning } = useIndex();
-  const [btnState, setBtnState] = useState("inactive", "active", "waiting");
-  const [gameStatus, setGameStatus] = useState("playing", "restarting");
+  const [btnState, setBtnState] = useState("inactive");
+  // const [gameStatus, setGameStatus] = useState("playing", "restarting");
+  const running = useRef(isRunning);
+
+  useEffect(() => {
+    setWaiting(btnState === "waiting");
+    setCancel(btnState === "active");
+  }, [btnState]);
+
+  useEffect(() => {
+    if (!running.current && isRunning) {
+      if (btnState === "waiting") {
+        if (betAmount <= balance && betAmount > 0) {
+          subtractFromBalance(betAmount);
+          setBtnState("active");
+          console.log("bet waiting");
+        } else {
+          setBtnState("inactive");
+          console.log("bet disabled");
+        }
+      }
+    }
+    running.current = isRunning;
+  }, [isRunning, btnState, betAmount, balance, subtractFromBalance]);
 
   const handleChangeAmount = (value) => {
     setBetAmount(parseFloat(value) || 0);
@@ -38,30 +60,23 @@ export const BetContainer = () => {
   };
 
   const handleBet = () => {
-    if (betAmount <= balance && betAmount > 0) {
-      subtractFromBalance(betAmount);
-      setCancel(true);
-      setWaiting(false);
-      console.log(`Bet placed: ${betAmount} GEL`);
-    } else {
+    if (betAmount <= 0 || betAmount > balance) {
       console.log("Insufficient balance or invalid bet amount");
+      return;
     }
+    subtractFromBalance(betAmount);
+    setBtnState("active");
+    console.log(`Bet placed: ${betAmount} GEL`);
   };
 
   const handleCancel = () => {
-    subtractFromBalance(-betAmount);
-    setCancel(false);
-    setWaiting(false);
+    addToBalance(betAmount);
+    setBtnState("inactive");
     console.log("Bet cancelled");
   };
 
   const handleWaiting = () => {
-    setWaiting((prev) => {
-      const next = !prev;
-      if (next) setCancel(false);
-      console.log(next ? "Bet waiting" : "Waiting cancelled");
-      return next;
-    });
+    setBtnState((s) => (s === "waiting" ? "inactive" : "waiting"));
   };
 
   const handleBetButton = () => {
@@ -69,12 +84,26 @@ export const BetContainer = () => {
       handleWaiting();
       return;
     }
-    if (cancel) {
+    if (btnState === "active") {
       handleCancel();
     } else {
       handleBet();
     }
   };
+
+  const containerClass =
+    btnState === "waiting"
+      ? "waiting_bet_container"
+      : btnState === "active"
+      ? "cancel_bet_container"
+      : "bet_container";
+
+  const buttonVariant =
+    btnState === "waiting"
+      ? "waiting_btn"
+      : btnState === "active"
+      ? "cancel_btn"
+      : "bet_btn";
 
   return (
     <article
@@ -118,25 +147,20 @@ export const BetContainer = () => {
           </div>
         </div>
         <div className="bet_mount_btn">
-          <Button
-            variant={
-              waiting ? "waiting_btn" : cancel ? "cancel_btn" : "bet_btn"
-            }
-            onClick={handleBetButton}
-          >
+          <Button variant={buttonVariant} onClick={handleBetButton}>
             <p className="bet">
-              {waiting ? "Waiting" : cancel ? "Cancel" : "Bet"}
+              {btnState === "waiting"
+                ? "Waiting"
+                : btnState === "active"
+                ? "Cancel"
+                : "Bet"}
             </p>
             <div className="mount_cont">
               <p className="bet_mount">
-                {waiting
-                  ? betAmount.toFixed(2)
-                  : cancel
-                  ? ""
-                  : betAmount.toFixed(2)}
+                {btnState === "active" ? "" : betAmount.toFixed(2)}
               </p>
               <p className="mount_valute">
-                {waiting ? "GEL" : cancel ? "" : "GEL"}
+                {btnState === "active" ? "" : "GEL"}
               </p>
             </div>
           </Button>
